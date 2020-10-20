@@ -1,0 +1,33 @@
+/* 
+  File.strings
+  zyp
+
+  Created by 张伊朋 on 2020/10/19.
+  
+*/
+
+//英文
+"testText" = "testText";
+
+"Login" = "Login";
+
+"table of Contents" = "table of Contents";
+
+"Language" = "English";
+
+"Simplified" = "Simplified";
+
+"Traditional" = "Traditional";
+
+"English" = "English";
+
+"Japanese" = "Japanese";
+
+"Korean" = "Korean";
+
+"Chian" = "Chian";
+
+"Please input Username" = "please input username";
+
+"Please enter password" = "please enter password";
+

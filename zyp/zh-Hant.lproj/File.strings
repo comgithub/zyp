@@ -1,0 +1,33 @@
+/* 
+  File.strings
+  zyp
+
+  Created by 张伊朋 on 2020/10/19.
+  
+*/
+
+//繁体
+"testText" = "這是壹個測試";
+
+"Login" = "登錄";
+
+"table of Contents" = "目錄";
+
+"Language" = "中文繁體";
+
+"Simplified" = "簡體";
+
+"Traditional" = "繁體";
+
+"English" = "英語";
+
+"Japanese" = "日語";
+
+"Korean" = "韓語";
+
+"Chian" = "中國";
+
+"Please input Username" = "請輸入賬號";
+
+"Please enter password" = "請輸入6-15位(英文和數字)密碼";
+

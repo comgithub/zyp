@@ -1,0 +1,33 @@
+/* 
+  File.strings
+  zyp
+
+  Created by 张伊朋 on 2020/10/19.
+  
+*/
+//日文
+"testText" = "これはテストです";
+
+"Login" = "ログインする";
+
+"table of Contents" = "目次";
+
+"Language" = "日本語";
+
+"Simplified" = "簡略化";
+
+"Traditional" = "繁体語";
+
+"English" = "英語";
+
+"Japanese" = "日本語";
+
+"Korean" = "韓国語";
+
+"Chian" = "中国";
+
+"Please input Username" = "ユーザー名を入力してください";
+
+"Please enter password" = "パスワードを入力してください";
+
+
