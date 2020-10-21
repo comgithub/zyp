@@ -13,4 +13,5 @@
 #import "UIFont+FitFont.h"
 #import "ColorAndFont.h"
 #import "LocalDefine.h"
+#import "ZMBProgress.h"
 

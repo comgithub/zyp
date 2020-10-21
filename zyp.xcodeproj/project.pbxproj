@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		E87D91E0253EBE6A00F7202A /* ZMBProgress.m in Sources */ = {isa = PBXBuildFile; fileRef = E87D91DF253EBE6A00F7202A /* ZMBProgress.m */; };
+		E87D91E9253EC54A00F7202A /* UIViewController+Ext.m in Sources */ = {isa = PBXBuildFile; fileRef = E87D91E8253EC54A00F7202A /* UIViewController+Ext.m */; };
+		E87D91EF253EC78900F7202A /* UIView+Toast.m in Sources */ = {isa = PBXBuildFile; fileRef = E87D91ED253EC78900F7202A /* UIView+Toast.m */; };
+		E87D91F5253ED2CD00F7202A /* CommonlyUsedMethod.m in Sources */ = {isa = PBXBuildFile; fileRef = E87D91F4253ED2CD00F7202A /* CommonlyUsedMethod.m */; };
 		E88EA6A3253D258500FB18AE /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = E88EA6A2253D258500FB18AE /* AppDelegate.m */; };
 		E88EA6AE253D258600FB18AE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E88EA6AD253D258600FB18AE /* Assets.xcassets */; };
 		E88EA6B4253D258600FB18AE /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = E88EA6B3253D258600FB18AE /* main.m */; };
@@ -72,6 +76,14 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		E87D91DE253EBE6A00F7202A /* ZMBProgress.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ZMBProgress.h; sourceTree = "<group>"; };
+		E87D91DF253EBE6A00F7202A /* ZMBProgress.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ZMBProgress.m; sourceTree = "<group>"; };
+		E87D91E7253EC54A00F7202A /* UIViewController+Ext.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIViewController+Ext.h"; sourceTree = "<group>"; };
+		E87D91E8253EC54A00F7202A /* UIViewController+Ext.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIViewController+Ext.m"; sourceTree = "<group>"; };
+		E87D91ED253EC78900F7202A /* UIView+Toast.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+Toast.m"; sourceTree = "<group>"; };
+		E87D91EE253EC78900F7202A /* UIView+Toast.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+Toast.h"; sourceTree = "<group>"; };
+		E87D91F3253ED2CD00F7202A /* CommonlyUsedMethod.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CommonlyUsedMethod.h; sourceTree = "<group>"; };
+		E87D91F4253ED2CD00F7202A /* CommonlyUsedMethod.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CommonlyUsedMethod.m; sourceTree = "<group>"; };
 		E88EA69E253D258500FB18AE /* zyp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = zyp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E88EA6A1253D258500FB18AE /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		E88EA6A2253D258500FB18AE /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -202,6 +214,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		E87D91DD253EBE2300F7202A /* pop-up */ = {
+			isa = PBXGroup;
+			children = (
+				E87D91DE253EBE6A00F7202A /* ZMBProgress.h */,
+				E87D91DF253EBE6A00F7202A /* ZMBProgress.m */,
+			);
+			path = "pop-up";
+			sourceTree = "<group>";
+		};
 		E88EA695253D258500FB18AE = {
 			isa = PBXGroup;
 			children = (
@@ -262,9 +283,12 @@
 		E88EA712253D3C4600FB18AE /* zypTools */ = {
 			isa = PBXGroup;
 			children = (
+				E87D91DD253EBE2300F7202A /* pop-up */,
 				E88EA7CF253D895800FB18AE /* countrycode */,
 				E88EA7CB253D893600FB18AE /* language */,
 				E88EA71F253D477100FB18AE /* xymenu */,
+				E87D91F3253ED2CD00F7202A /* CommonlyUsedMethod.h */,
+				E87D91F4253ED2CD00F7202A /* CommonlyUsedMethod.m */,
 			);
 			path = zypTools;
 			sourceTree = "<group>";
@@ -393,6 +417,10 @@
 		E88EA7C3253D81CD00FB18AE /* category */ = {
 			isa = PBXGroup;
 			children = (
+				E87D91EE253EC78900F7202A /* UIView+Toast.h */,
+				E87D91ED253EC78900F7202A /* UIView+Toast.m */,
+				E87D91E7253EC54A00F7202A /* UIViewController+Ext.h */,
+				E87D91E8253EC54A00F7202A /* UIViewController+Ext.m */,
 				E88EA7C4253D820100FB18AE /* UIFount */,
 			);
 			path = category;
@@ -572,10 +600,13 @@
 				E88EA79B253D725500FB18AE /* NSArray+MASAdditions.m in Sources */,
 				E88EA7AB253D725500FB18AE /* SDImageCache.m in Sources */,
 				E88EA70A253D394B00FB18AE /* ViewController.m in Sources */,
+				E87D91E9253EC54A00F7202A /* UIViewController+Ext.m in Sources */,
+				E87D91F5253ED2CD00F7202A /* CommonlyUsedMethod.m in Sources */,
 				E88EA7D6253D895800FB18AE /* XWCountryCodeController.m in Sources */,
 				E88EA7A1253D725500FB18AE /* UIImage+WebP.m in Sources */,
 				E88EA7AD253D725500FB18AE /* NSData+ImageContentType.m in Sources */,
 				E88EA79C253D725500FB18AE /* View+MASAdditions.m in Sources */,
+				E87D91EF253EC78900F7202A /* UIView+Toast.m in Sources */,
 				E88EA796253D725400FB18AE /* NSLayoutConstraint+MASDebugAdditions.m in Sources */,
 				E88EA798253D725500FB18AE /* MASCompositeConstraint.m in Sources */,
 				E88EA7A0253D725500FB18AE /* MBProgressHUD.m in Sources */,
@@ -591,6 +622,7 @@
 				E88EA7B0253D725500FB18AE /* UIButton+WebCache.m in Sources */,
 				E88EA730253D477200FB18AE /* UIView+XYMenu.m in Sources */,
 				E88EA7AA253D725500FB18AE /* SDWebImagePrefetcher.m in Sources */,
+				E87D91E0253EBE6A00F7202A /* ZMBProgress.m in Sources */,
 				E88EA7C7253D820100FB18AE /* UIFont+FitFont.m in Sources */,
 				E88EA7A6253D725500FB18AE /* SDWebImageDownloader.m in Sources */,
 				E88EA7A9253D725500FB18AE /* SDWebImageCompat.m in Sources */,

@@ -6,10 +6,9 @@
 //
 
 #import "ViewController.h"
-#import "UIBarButtonItem+XYMenu.h"
 #import "XWCountryCodeController.h"
 @interface ViewController ()
-
+@property (strong,nonatomic)dispatch_source_t sourceTimer;
 
 @end
 
@@ -34,7 +33,7 @@
         [self.view addSubview:line];
         [line mas_makeConstraints:^(MASConstraintMaker *make) {
                 make.left.mas_equalTo(Z_SXRealValue(50));
-                make.top.mas_equalTo(Z_NAVIGATION_BAR_HEIGHT+Z_SYRealValue(100)+Z_SYRealValue(60)+i*Z_SYRealValue(60));
+                make.top.mas_equalTo(Z_NAVIGATION_BAR_HEIGHT+Z_SYRealValue(80)+Z_SYRealValue(60)+i*Z_SYRealValue(60));
                 make.right.mas_equalTo(-Z_SXRealValue(50));
                 make.height.mas_equalTo(1);
         
@@ -44,7 +43,7 @@
         field.textColor =UIColor.blackColor;
         field.font = Z_Font_Size(15);
         [self.view addSubview:field];
-        
+       
         if (i==0) {
             field.text = [NSString stringWithFormat:@"%@(+86)",Z_String(@"Chian")];
             field.enabled = NO;
@@ -88,13 +87,13 @@
     [loginButton setTitle:Z_String(@"Login") forState:UIControlStateNormal];
     loginButton.titleLabel.font = Z_Font_Size(16);
     loginButton.layer.cornerRadius = 20;
-//    [loginButton addTarget:self action:@selector(signIn:) forControlEvents:UIControlEventTouchUpInside];
+    [loginButton addTarget:self action:@selector(signIn:) forControlEvents:UIControlEventTouchUpInside];
     loginButton.backgroundColor  =Z_Color_App;
     [loginButton setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
     [self.view addSubview:loginButton];
     [loginButton mas_makeConstraints:^(MASConstraintMaker *make) {
         make.left.mas_equalTo(Z_SXRealValue(60));
-        make.top.mas_equalTo(Z_NAVIGATION_BAR_HEIGHT+Z_SYRealValue(100)+3*Z_SYRealValue(60)+Z_SYRealValue(40));
+        make.top.mas_equalTo(Z_NAVIGATION_BAR_HEIGHT+Z_SYRealValue(80)+3*Z_SYRealValue(60)+Z_SYRealValue(40));
         make.right.mas_equalTo(-Z_SXRealValue(60));
         make.height.mas_equalTo(40);
         }];
@@ -119,7 +118,68 @@
     }];
 
 }
+-(void)signIn:(UIButton *)button{
+//    [ZMBProgress showToastInfo:@"登录成功"];
+    [self beginLogin];
+}
 
+- (void)beginLogin
+{
+    NSString *loginName = self.loginName.text;
+    NSString *loginPsw = self.loginPsw.text;
+
+    //** 登陆名的非空验证
+    if ([loginName length] == 0)
+    {
+        [ZMBProgress showToastInfo:@"请输入账号！"];
+        
+        return;
+    }
+
+    //** 登陆密码的非空验证
+    if ([loginPsw length] == 0)
+    {
+        [ZMBProgress showToastInfo:@"请输入登陆密码！"];
+        return;
+    }
+
+   
+    [self.view endEditing:YES];
+    // 提交用户登陆信息认证和版本检查
+    [self createDispatch_source_t];
+ 
+    [MBProgressHUD showHUDAddedTo:self.view  animated:YES];
+
+
+}
+/*GCD定时器*/
+
+-(void)createDispatch_source_t{
+    //创建全局队列
+    dispatch_queue_t queue = dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0);
+    //使用全局队列创建计时器
+    _sourceTimer = dispatch_source_create(DISPATCH_SOURCE_TYPE_TIMER, 0, 0, queue);
+    //定时器延迟时间
+    NSTimeInterval delayTime = 1.0f;
+    //定时器间隔时间
+    NSTimeInterval timeInterval = 1.0f;
+    //设置开始时间
+    dispatch_time_t startDelayTime = dispatch_time(DISPATCH_TIME_NOW, (int64_t)(delayTime * NSEC_PER_SEC));
+    //设置计时器
+    dispatch_source_set_timer(_sourceTimer,startDelayTime,timeInterval*NSEC_PER_SEC,0.1*NSEC_PER_SEC);
+    //执行事件
+    dispatch_source_set_event_handler(_sourceTimer,^{
+        //销毁定时器
+        dispatch_source_cancel(self->_sourceTimer);
+        dispatch_async(dispatch_get_main_queue(),^{
+            [MBProgressHUD hideHUDForView:self.view animated:NO];
+            [ZMBProgress showToastInfo:@"登录成功"];
+        });
+    });
+    
+    //启动计时器
+    dispatch_resume(_sourceTimer);
+}
 -(void)changeLanguage:(NSString *)language
 {
 
@@ -183,5 +243,12 @@
             };
             countryCodeVC.modalPresentationStyle = UIModalPresentationFullScreen;
             [self presentViewController:countryCodeVC  animated:YES completion:nil];
+}
+-(void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event{
+  
+    
+    [self.view endEditing:YES];
+
+    
 }
 @end

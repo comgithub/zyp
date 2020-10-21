@@ -17,10 +17,8 @@ NS_ASSUME_NONNULL_BEGIN
 /** 登陆密码 */
 @property (strong, nonatomic)  UITextField *loginPsw;
 
-
-@property (strong, nonatomic)  UIButton *btnRegister;
-
 @property (strong,nonatomic) NSString *phoneArea;
+
 @end
 
 NS_ASSUME_NONNULL_END
